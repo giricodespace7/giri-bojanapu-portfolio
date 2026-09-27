@@ -176,7 +176,6 @@ function Hero() {
 
             <a
               href="/Giri-Babu-Resume.pdf"
-              download
               className="
                 mt-7 inline-flex
                 items-center gap-3
