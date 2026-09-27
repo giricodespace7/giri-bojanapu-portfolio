@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+
+  <defs>
+    <linearGradient
+      id="purple"
+      x1="35"
+      y1="35"
+      x2="220"
+      y2="220"
+      gradientUnits="userSpaceOnUse"
+    >
+      <stop offset="0%" stop-color="#E879F9"/>
+      <stop offset="25%" stop-color="#C026D3"/>
+      <stop offset="50%" stop-color="#9333EA"/>
+      <stop offset="75%" stop-color="#7C3AED"/>
+      <stop offset="100%" stop-color="#4F46E5"/>
+    </linearGradient>
+
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Vibrant Purple Brand G -->
+  <path
+    d="
+      M128 28
+      C73 28 28 73 28 128
+      C28 183 73 228 128 228
+      C159 228 188 214 207 190
+      L207 116
+      L128 116
+      L128 150
+      L170 150
+      C162 176 146 190 128 190
+      C94 190 66 163 66 128
+      C66 93 94 66 128 66
+      C150 66 169 77 181 96
+      L210 70
+      C191 44 161 28 128 28
+      Z
+    "
+    fill="url(#purple)"
+    filter="url(#glow)"
+  />
+
+  <!-- G opening -->
+  <path
+    d="M128 116H207V150H128Z"
+    fill="white"
+  />
+
+</svg>
