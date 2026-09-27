@@ -2,7 +2,7 @@
 
 A sleek, modern, and high-performance developer portfolio built with **React**, **Vite**, and **Tailwind CSS**. Designed with a dark aesthetic, interactive animations, and a clean separation of content and UI.
 
-🔗 **Live Demo:** [your-deployed-link-here](#)
+🔗 **Live Demo:** https://giri-bojanapu-portfolio.vercel.app/
 
 ---
 
