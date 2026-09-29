@@ -16,10 +16,7 @@ export const skillGroups = [
     category: "Database",
     items: ["MongoDB", "Oracle SQL"],
   },
-  {
-    category: "DevOps",
-    items: ["GitHub Actions", "Netlify", "Vercel"], // you can adjust based on what you actually use
-  },
+
   {
     category: "Tools",
     items: ["Git", "GitHub", "VS Code"],
