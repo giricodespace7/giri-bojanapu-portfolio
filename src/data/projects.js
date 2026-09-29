@@ -28,4 +28,18 @@ export const projects = [
     github: "# ADD_GITHUB_URL",
     liveDemo: "# ADD_LIVE_DEMO_URL",
   },
+  {
+    name: "Travel Booking Website",
+    description:
+      "A responsive travel booking website inspired by the design and functionality of MakeMyTrip.",
+    technologies: ["React.js", "JavaScript", "HTML", "CSS"],
+    features: [
+      "Travel search and booking workflows",
+      "Form handling for booking requests",
+      "Interactive, reusable React components",
+      "Consistent, responsive layouts across pages",
+    ],
+    github: "# ADD_GITHUB_URL",
+    liveDemo: "# ADD_LIVE_DEMO_URL",
+  },
 ];
