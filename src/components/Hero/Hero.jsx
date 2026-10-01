@@ -5,7 +5,6 @@ import {
   FaGithub,
 } from "react-icons/fa";
 import { socialLinks } from "../../data/socialLinks.js";
-import Navbar from "../Navbar/Navbar.jsx";
 
 function Hero() {
   const hasLinkedin = !socialLinks.linkedin.startsWith("#");
@@ -55,7 +54,7 @@ function Hero() {
             <h2 className="text-2xl font-bold tracking-tight text-white sm:text-3xl">
               Giri babu
             </h2>
-            {/* <Navbar /> */}
+
 
             <span className="hidden h-6 w-px bg-white/40 sm:block" />
           </div>
