@@ -11,6 +11,11 @@ export const projects = [
       "React state management with reusable components",
       "Interactive UI elements across application workflows",
     ],
+    imageUrl: "/images/projects/banking-app.jpg",
+    // HSL values as [h, s%, l%] for easy use in hsla()
+    themeH: 38,
+    themeS: 80,
+    themeL: 50,
     github: "# ADD_GITHUB_URL",
     liveDemo: "# ADD_LIVE_DEMO_URL",
   },
@@ -25,7 +30,16 @@ export const projects = [
       "Interactive, reusable React components",
       "Consistent, responsive layouts across pages",
     ],
+    imageUrl: "/images/projects/travel-booking.jpg",
+    themeH: 195,
+    themeS: 80,
+    themeL: 40,
     github: "# ADD_GITHUB_URL",
     liveDemo: "# ADD_LIVE_DEMO_URL",
   },
 ];
+
+// Helper to generate hsla color string from project theme values
+export function hsl(project, alpha = 1) {
+  return `hsla(${project.themeH}, ${project.themeS}%, ${project.themeL}%, ${alpha})`;
+}
