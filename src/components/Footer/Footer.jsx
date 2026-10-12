@@ -1,12 +1,14 @@
 function Footer() {
   return (
-    <footer className="border-t border-border">
-      <div className="section py-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-muted">
-        <p>© {new Date().getFullYear()} Giri Babu Bojanapu. All rights reserved.</p>
-        <p className="font-mono text-xs">built with React &amp; Tailwind CSS</p>
+    <footer className="bg-ink border-t border-white/10">
+      <div className="max-w-content mx-auto px-6 md:px-8 py-6 flex flex-col sm:flex-row items-center justify-center gap-2 text-sm text-gray-400">
+        <p>
+          © {new Date().getFullYear()} Giri Babu Bojanapu. All rights reserved.
+        </p>
+        <span className="hidden sm:inline text-gray-600">💜</span>
       </div>
     </footer>
-  )
+  );
 }
 
-export default Footer
+export default Footer;

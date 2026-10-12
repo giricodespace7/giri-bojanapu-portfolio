@@ -1,39 +1,72 @@
+import {
+  FaLightbulb,
+  FaSearchPlus,
+  FaCode,
+  FaBookOpen,
+  FaUsers,
+  FaBrain,
+} from 'react-icons/fa';
+
+const traits = [
+  { icon: FaLightbulb, label: 'Problem Solver' },
+  { icon: FaSearchPlus, label: 'Detail Oriented' },
+  { icon: FaCode, label: 'Clean Code Advocate' },
+  { icon: FaBookOpen, label: 'Always Learning' },
+  { icon: FaUsers, label: 'Team Player' },
+  { icon: FaBrain, label: 'Curious Mind' },
+];
+
 function About() {
   return (
     <section id="about" className="section">
-      <span className="section-tag">// about</span>
-      <h2 className="section-title">About Me</h2>
-
-      <div className="grid md:grid-cols-[1fr_1fr] gap-10 items-start">
-        <div className="space-y-4 text-slate-300 leading-relaxed">
-          <p>
-            I'm an entry-level Full Stack Developer with internship experience
-            in MERN stack development, building responsive web applications
-            using React.js, JavaScript, Node.js, Express.js and MongoDB.
-          </p>
-          <p>
-            I'm familiar with developing REST APIs, handling dynamic data, and
-            building responsive user interfaces. I'm currently looking for an
-            entry-level Frontend, React.js, or Full Stack Developer role to
-            apply my skills and keep growing as a developer.
-          </p>
+      <div className="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
+        {/* Left - Image */}
+        <div className="relative flex justify-center">
+          <div className="absolute inset-0 bg-primary/5 rounded-3xl -rotate-3 scale-95" />
+          <img
+            src="https://giribojanapu.sirv.com/Portfolio%20images/Giri-Portfolio-Images/about%20image.png"
+            alt="About Giri Babu"
+            className="relative rounded-2xl w-full max-w-md object-contain drop-shadow-lg"
+          />
         </div>
 
-        <div className="rounded-lg border border-border bg-surface p-6">
-          <h3 className="font-display text-lg text-ink mb-4">Education</h3>
-          <div className="space-y-1">
-            <p className="text-ink text-sm font-medium">
-              B.Tech, Electronics and Communication Engineering
-            </p>
-            <p className="text-muted text-sm">
-              Sri Venkateswara College of Engineering & Technology, Chittoor
-            </p>
-            <p className="text-muted text-sm font-mono">2017 – 2021</p>
+        {/* Right - Content */}
+        <div>
+          <h2 className="font-display text-3xl md:text-4xl font-bold text-ink mb-6">
+            About Me
+          </h2>
+
+          <p className="text-ink-muted leading-relaxed mb-8 text-base">
+            Passionate about creating clean, efficient and scalable solutions
+            with great user experiences. I love working with technologies that
+            push the web forward. I'm an entry-level Full Stack Developer with
+            internship experience in MERN stack development, building responsive
+            web applications using React.js, JavaScript, Node.js, Express.js
+            and MongoDB.
+          </p>
+
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+            {traits.map(({ icon: Icon, label }) => (
+              <div
+                key={label}
+                className="
+                  flex items-center gap-3 
+                  px-4 py-3 rounded-xl
+                  bg-surface-2 border border-gray-100
+                  hover:border-primary/30 hover:bg-primary-50
+                  transition-all duration-200
+                  group
+                "
+              >
+                <Icon className="text-primary text-base flex-shrink-0 group-hover:scale-110 transition-transform" />
+                <span className="text-sm font-medium text-ink-secondary">{label}</span>
+              </div>
+            ))}
           </div>
         </div>
       </div>
     </section>
-  )
+  );
 }
 
-export default About
+export default About;
