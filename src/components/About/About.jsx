@@ -5,15 +5,15 @@ import {
   FaBookOpen,
   FaUsers,
   FaBrain,
-} from 'react-icons/fa';
+} from "react-icons/fa";
 
 const traits = [
-  { icon: FaLightbulb, label: 'Problem Solver' },
-  { icon: FaSearchPlus, label: 'Detail Oriented' },
-  { icon: FaCode, label: 'Clean Code Advocate' },
-  { icon: FaBookOpen, label: 'Always Learning' },
-  { icon: FaUsers, label: 'Team Player' },
-  { icon: FaBrain, label: 'Curious Mind' },
+  { icon: FaLightbulb, label: "Problem Solver" },
+  { icon: FaSearchPlus, label: "Detail Oriented" },
+  { icon: FaCode, label: "Clean Code Advocate" },
+  { icon: FaBookOpen, label: "Always Learning" },
+  { icon: FaUsers, label: "Team Player" },
+  { icon: FaBrain, label: "Curious Mind" },
 ];
 
 function About() {
@@ -53,21 +53,21 @@ function About() {
                 shadow-[0_4px_30px_rgba(0,0,0,0.06)]
               "
             >
-              <p className="font-mono text-sm text-primary mb-3 tracking-wide">
+              {/* <p className="font-mono text-sm text-primary mb-3 tracking-wide">
                 // about me
-              </p>
+              </p> */}
 
               <h2 className="font-display text-3xl md:text-4xl font-bold text-ink mb-5">
                 About Me
               </h2>
 
               <p className="text-base text-ink-muted leading-relaxed mb-8">
-                Passionate about creating clean, efficient and scalable solutions
-                with great user experiences. I love working with technologies that
-                push the web forward. I'm an entry-level Full Stack Developer with
-                internship experience in MERN stack development, building responsive
-                web applications using React.js, JavaScript, Node.js, Express.js
-                and MongoDB.
+                Passionate about creating clean, efficient and scalable
+                solutions with great user experiences. I love working with
+                technologies that push the web forward. I'm an entry-level Full
+                Stack Developer with internship experience in MERN stack
+                development, building responsive web applications using
+                React.js, JavaScript, Node.js, Express.js and MongoDB.
               </p>
 
               <div className="grid grid-cols-2 gap-3">
@@ -84,7 +84,9 @@ function About() {
                     "
                   >
                     <Icon className="text-primary text-base flex-shrink-0 group-hover:scale-110 transition-transform" />
-                    <span className="text-sm font-medium text-ink-secondary">{label}</span>
+                    <span className="text-sm font-medium text-ink-secondary">
+                      {label}
+                    </span>
                   </div>
                 ))}
               </div>
