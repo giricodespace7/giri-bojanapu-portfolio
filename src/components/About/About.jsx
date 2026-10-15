@@ -37,7 +37,7 @@ function About() {
         <img
           src="https://giribojanapu.sirv.com/Portfolio%20images/Giri-Portfolio-Images/about%20image.png"
           alt="About Giri Babu"
-          className="absolute inset-0 w-full h-full object-cover object-center z-0"
+          className="absolute inset-0 w-full h-full object-contain object-left z-0"
         />
 
         {/* Content on the right */}
