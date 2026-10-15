@@ -73,10 +73,11 @@ function Hero() {
                 <span className="font-serif italic text-ink">Babu</span>
               </h1> */}
 
-              <div className="inline-flex items-center gap-2 bg-primary/10 text-primary rounded-full px-4 py-1.5 mb-5">
-                <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-                <span className="text-sm font-semibold">
-                  Software Engineer & Full-Stack Developer
+              <div className="inline-flex items-center gap-2 bg-primary/10 text-primary rounded-full px-4 py-1.5 mt-4 mb-5">
+                <span className="w-2 h-2 rounded-full bg-primary animate-pulse self-start mt-1.5 md:mt-0 md:self-center" />
+                <span className="text-sm md:text-base font-semibold">
+                  <span className="block md:inline">Software Engineer</span>
+                  <span className="block pl-4 md:inline md:pl-0">&amp; Full-Stack Developer</span>
                 </span>
               </div>
 
