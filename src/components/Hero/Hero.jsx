@@ -2,6 +2,7 @@ import { FaArrowRight, FaArrowDown, FaDownload } from "react-icons/fa";
 import { ChevronRight } from "lucide-react";
 import { cn } from "../../lib/utils";
 import { AnimatedGradientText } from "../ui/animated-gradient-text";
+import Text3DFlip from "@/registry/magicui/text-3d-flip";
 
 function Hero() {
   return (
@@ -32,12 +33,9 @@ function Hero() {
           <div className="flex justify-start">
             <div
               className="
+                glass-mobile
                 max-w-lg w-full
-                bg-white/70 backdrop-blur-xl
-                border border-white/40
-                rounded-2xl
                 px-7 py-8 sm:px-9 sm:py-10
-                shadow-[0_4px_30px_rgba(0,0,0,0.06)]
               "
             >
               {/* Animated Gradient Text Badge */}
@@ -65,13 +63,17 @@ function Hero() {
               <p className="text-lg text-ink-secondary mb-1 font-medium">
                 Hi, I'm
               </p>
-              <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-slate-900 leading-tight">
-                Giri <span class="text-purple-600 italic font-serif">Babu</span>
-              </h1>
-              {/* <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.08] tracking-tight mb-3">
-                <span className="font-display text-ink">Giri </span>
-                <span className="font-serif italic text-ink">Babu</span>
-              </h1> */}
+              <Text3DFlip
+                className="text-4xl md:text-6xl tracking-tight leading-tight"
+                textClassName="text-slate-900 font-extrabold"
+                flipTextClassName="text-purple-600 italic font-serif font-extrabold"
+                rotateDirection="top"
+                staggerDuration={0.03}
+                staggerFrom="first"
+                transition={{ type: "spring", damping: 25, stiffness: 160 }}
+              >
+                Giri Babu
+              </Text3DFlip>
 
               <div className="inline-flex items-center gap-2 bg-primary/10 text-primary rounded-full px-4 py-1.5 mt-4 mb-5">
                 <span className="w-2 h-2 rounded-full bg-primary animate-pulse self-start mt-1.5 md:mt-0 md:self-center" />

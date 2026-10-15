@@ -45,12 +45,9 @@ function About() {
           <div className="flex justify-end">
             <div
               className="
+                glass-mobile
                 max-w-lg w-full
-                bg-white/70 backdrop-blur-xl
-                border border-white/40
-                rounded-2xl
                 px-7 py-8 sm:px-9 sm:py-10
-                shadow-[0_4px_30px_rgba(0,0,0,0.06)]
               "
             >
               {/* <p className="font-mono text-sm text-primary mb-3 tracking-wide">
