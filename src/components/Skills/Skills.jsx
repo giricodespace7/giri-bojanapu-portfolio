@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import {
   SiJavascript,
   SiReact,
@@ -11,7 +12,8 @@ import {
   SiExpress,
   SiBootstrap,
 } from 'react-icons/si';
-import { FaEllipsisH } from 'react-icons/fa';
+import { FaEllipsisH, FaCode } from 'react-icons/fa';
+import { OrbitingSkills } from '../ui/OrbitingSkills';
 
 const skills = [
   { name: 'JavaScript', icon: SiJavascript, color: '#F7DF1E' },
@@ -27,46 +29,85 @@ const skills = [
   { name: 'More', icon: FaEllipsisH, color: '#7C3AED' },
 ];
 
+// Convert to orbit-compatible format with colored icons
+const orbitItems = skills.map(({ name, icon: Icon, color }) => ({
+  label: name,
+  icon: <Icon size={18} style={{ color }} />,
+}));
+
+function useIsMobile() {
+  const [mobile, setMobile] = useState(false);
+  useEffect(() => {
+    const mq = window.matchMedia('(max-width: 767px)');
+    setMobile(mq.matches);
+    const handler = (e) => setMobile(e.matches);
+    mq.addEventListener('change', handler);
+    return () => mq.removeEventListener('change', handler);
+  }, []);
+  return mobile;
+}
+
 function Skills() {
+  const isMobile = useIsMobile();
+
   return (
     <section id="skills" className="section">
       <h2 className="font-display text-3xl md:text-4xl font-bold text-ink mb-12">
         Skills & Technologies
       </h2>
 
-      <div className="flex flex-wrap gap-6 justify-center sm:justify-start">
-        {skills.map(({ name, icon: Icon, color }) => (
-          <div
-            key={name}
-            className="
-              flex flex-col items-center gap-3
-              w-[100px]
-              group cursor-default
-            "
-          >
+      {/* ── Mobile: Orbiting animation ── */}
+      {isMobile && (
+        <OrbitingSkills
+          items={orbitItems}
+          radius={120}
+          duration={22}
+          showPath
+          className="mx-auto"
+        >
+          {/* Center avatar */}
+          <div className="flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-primary to-primary-dark shadow-lg border-2 border-white">
+            <FaCode className="text-white text-xl" />
+          </div>
+        </OrbitingSkills>
+      )}
+
+      {/* ── Desktop: Grid layout (unchanged) ── */}
+      {!isMobile && (
+        <div className="flex flex-wrap gap-6 justify-center sm:justify-start">
+          {skills.map(({ name, icon: Icon, color }) => (
             <div
+              key={name}
               className="
-                w-16 h-16 rounded-2xl
-                flex items-center justify-center
-                bg-surface-2 border border-gray-100
-                group-hover:border-primary/30
-                group-hover:shadow-card-hover
-                transition-all duration-300
-                group-hover:-translate-y-1
+                flex flex-col items-center gap-3
+                w-[100px]
+                group cursor-default
               "
             >
-              <Icon
-                size={28}
-                style={{ color }}
-                className="group-hover:scale-110 transition-transform duration-300"
-              />
+              <div
+                className="
+                  w-16 h-16 rounded-2xl
+                  flex items-center justify-center
+                  bg-surface-2 border border-gray-100
+                  group-hover:border-primary/30
+                  group-hover:shadow-card-hover
+                  transition-all duration-300
+                  group-hover:-translate-y-1
+                "
+              >
+                <Icon
+                  size={28}
+                  style={{ color }}
+                  className="group-hover:scale-110 transition-transform duration-300"
+                />
+              </div>
+              <span className="text-xs font-medium text-ink-secondary text-center">
+                {name}
+              </span>
             </div>
-            <span className="text-xs font-medium text-ink-secondary text-center">
-              {name}
-            </span>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
+      )}
     </section>
   );
 }

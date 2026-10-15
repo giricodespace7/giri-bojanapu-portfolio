@@ -2,87 +2,99 @@ import { FaArrowRight, FaArrowDown } from 'react-icons/fa';
 
 function Hero() {
   return (
-    <section
-      id="home"
-      className="relative min-h-screen flex items-center pt-[72px] overflow-hidden"
-    >
-      {/* Subtle background decoration */}
-      <div className="absolute top-20 right-0 w-72 h-72 bg-primary/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-20 left-0 w-96 h-96 bg-purple-100/50 rounded-full blur-3xl" />
+    <section id="home" className="px-4 sm:px-6 md:px-10 lg:px-16 pt-24 pb-6">
+      {/* ── Hero Card ── */}
+      <div
+        className="
+          relative overflow-hidden
+          rounded-3xl
+          min-h-[85vh]
+          flex items-center
+          shadow-[0_8px_40px_rgba(0,0,0,0.08)]
+          border border-gray-100
+        "
+      >
+        {/* Card background image — clearly visible */}
+        <img
+          src="https://giribojanapu.sirv.com/Portfolio%20images/Giri-Portfolio-Images/hero%20page.png"
+          alt="Giri Babu - Full Stack Developer"
+          className="absolute inset-0 w-full h-full object-cover object-center z-0"
+        />
 
-      <div className="max-w-content mx-auto px-6 md:px-8 w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Left Content */}
-          <div className="relative z-10 animate-slide-up">
-            <p className="text-lg text-ink-secondary mb-2 font-medium">
-              Hi, I'm
-            </p>
+        {/* Content on the left */}
+        <div className="relative z-10 w-full px-6 sm:px-10 md:px-14 lg:px-16 py-16">
+          <div className="flex justify-start">
+            <div
+              className="
+                max-w-lg w-full
+                bg-white/70 backdrop-blur-xl
+                border border-white/40
+                rounded-2xl
+                px-7 py-8 sm:px-9 sm:py-10
+                shadow-[0_4px_30px_rgba(0,0,0,0.06)]
+              "
+            >
+              <p className="font-mono text-sm text-primary mb-3 tracking-wide">
+                // hello world
+              </p>
 
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-[1.05] tracking-tight mb-4">
-              <span className="font-display text-ink">Giri </span>
-              <span className="font-serif italic text-ink">Babu</span>
-            </h1>
+              <p className="text-lg text-ink-secondary mb-1 font-medium">
+                Hi, I'm
+              </p>
 
-            <p className="text-lg sm:text-xl text-ink-secondary font-medium mb-6">
-              Software Engineer & Full-Stack Developer
-            </p>
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.08] tracking-tight mb-3">
+                <span className="font-display text-ink">Giri </span>
+                <span className="font-serif italic text-ink">Babu</span>
+              </h1>
 
-            <p className="text-base text-ink-muted leading-relaxed max-w-lg mb-8">
-              I build digital products that solve real problems and create
-              meaningful impact. From idea to deployment, I turn complex
-              challenges into simple, beautiful solutions.
-            </p>
+              <div className="inline-flex items-center gap-2 bg-primary/10 text-primary rounded-full px-4 py-1.5 mb-5">
+                <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+                <span className="text-sm font-semibold">
+                  Software Engineer & Full-Stack Developer
+                </span>
+              </div>
 
-            <div className="flex flex-wrap gap-4">
-              <a
-                href="#projects"
-                className="
-                  inline-flex items-center gap-3
-                  bg-primary text-white
-                  px-7 py-3.5 rounded-full
-                  font-semibold text-base
-                  hover:bg-primary-dark
-                  transition-all duration-300
-                  hover:-translate-y-0.5
-                  shadow-md hover:shadow-lg
-                "
-              >
-                View My Work
-                <FaArrowRight className="text-sm" />
-              </a>
+              <p className="text-base text-ink-muted leading-relaxed mb-8">
+                I build digital products that solve real problems and create
+                meaningful impact. From idea to deployment, I turn complex
+                challenges into simple, beautiful solutions.
+              </p>
 
-              <a
-                href="/Giri-Babu-Resume.pdf"
-                className="
-                  inline-flex items-center gap-3
-                  bg-white text-ink
-                  px-7 py-3.5 rounded-full
-                  font-semibold text-base
-                  border-2 border-gray-200
-                  hover:border-primary hover:text-primary
-                  transition-all duration-300
-                  hover:-translate-y-0.5
-                "
-              >
-                Download CV
-                <FaArrowDown className="text-sm" />
-              </a>
-            </div>
-          </div>
+              <div className="flex flex-wrap gap-3">
+                <a
+                  href="#projects"
+                  className="
+                    inline-flex items-center gap-2.5
+                    bg-primary text-white
+                    px-6 py-3 rounded-full
+                    font-semibold text-sm
+                    hover:bg-primary-dark
+                    transition-all duration-300
+                    hover:-translate-y-0.5
+                    shadow-md hover:shadow-lg
+                  "
+                >
+                  View My Work
+                  <FaArrowRight className="text-xs" />
+                </a>
 
-          {/* Right Image */}
-          <div className="relative flex justify-center lg:justify-end animate-fade-in">
-            {/* Decorative elements */}
-            <div className="absolute -top-6 -right-6 w-16 h-16 border-2 border-primary/20 rounded-full hidden lg:block" />
-            <div className="absolute top-10 right-10 w-4 h-4 bg-primary rounded-full opacity-60 animate-float hidden lg:block" />
-            <div className="absolute -bottom-4 left-10 w-8 h-8 border-2 border-primary/30 rounded-full hidden lg:block" />
-
-            <div className="relative max-w-md lg:max-w-lg w-full">
-              <img
-                src="https://giribojanapu.sirv.com/Portfolio%20images/Giri-Portfolio-Images/hero%20page.png"
-                alt="Giri Babu - Full Stack Developer"
-                className="w-full h-auto object-contain drop-shadow-2xl"
-              />
+                <a
+                  href="/Giri-Babu-Resume.pdf"
+                  className="
+                    inline-flex items-center gap-2.5
+                    bg-white text-ink
+                    px-6 py-3 rounded-full
+                    font-semibold text-sm
+                    border border-gray-200
+                    hover:border-primary hover:text-primary
+                    transition-all duration-300
+                    hover:-translate-y-0.5
+                  "
+                >
+                  Download CV
+                  <FaArrowDown className="text-xs" />
+                </a>
+              </div>
             </div>
           </div>
         </div>
