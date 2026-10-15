@@ -56,7 +56,7 @@ function Skills() {
       <div
         className="
           rounded-3xl
-          bg-white
+          bg-ink
           shadow-[0_8px_50px_rgba(124,58,237,0.18),0_2px_20px_rgba(124,58,237,0.10)]
           border border-primary/20
           animate-float-card
@@ -66,7 +66,7 @@ function Skills() {
           py-16 md:py-20
         "
       >
-        <h2 className="font-display text-3xl md:text-4xl font-bold text-ink mb-12 text-center">
+        <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-12 text-center">
           Skills & Technologies
         </h2>
 
@@ -102,9 +102,9 @@ function Skills() {
                   className="
                     w-16 h-16 rounded-2xl
                     flex items-center justify-center
-                    bg-surface-2 border border-gray-100
-                    group-hover:border-primary/30
-                    group-hover:shadow-card-hover
+                    bg-white/10 border border-white/10
+                    group-hover:border-primary/50
+                    group-hover:shadow-[0_4px_20px_rgba(124,58,237,0.3)]
                     transition-all duration-300
                     group-hover:-translate-y-1
                   "
@@ -115,7 +115,7 @@ function Skills() {
                     className="group-hover:scale-110 transition-transform duration-300"
                   />
                 </div>
-                <span className="text-xs font-medium text-ink-secondary text-center">
+                <span className="text-xs font-medium text-gray-300 text-center">
                   {name}
                 </span>
               </div>
