@@ -76,3 +76,193 @@ textarea:focus-visible {
 ::-webkit-scrollbar-thumb:hover {
   background: #7C3AED;
 }
+
+/* ═══════════════════════════════════════════════════════
+   MOBILE-ONLY RESPONSIVE OVERRIDES (max-width: 767px)
+   Matches Tailwind's md: breakpoint at 768px.
+   Reduces excessive vertical spacing, compacts cards,
+   and places hero buttons side-by-side.
+   Desktop/tablet layouts are completely unaffected.
+   ═══════════════════════════════════════════════════════ */
+@media (max-width: 767px) {
+
+  /* ── 1A. Hero & About outer card — remove excessive min-height ── */
+  #home > div,
+  #about > div {
+    min-height: auto !important;
+  }
+
+  /* ── 1A. Hero inner glass card — vertical padding ≈ half of horizontal ── */
+  /* Horizontal is ~28px (px-7). Set vertical to ~16px. */
+  #home [class*="backdrop-blur"] {
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+  }
+
+  /* ── 1A. Hero description — reduce excess bottom margin ── */
+  /* Target only the description paragraph (last p), not the greeting */
+  #home [class*="backdrop-blur"] > p:last-of-type {
+    margin-bottom: 1.25rem;
+  }
+
+  /* ── 1B. Hero buttons — force side-by-side ── */
+  #home [class*="backdrop-blur"] > .flex {
+    flex-wrap: nowrap !important;
+    flex-direction: row !important;
+    gap: 0.5rem !important;
+  }
+
+  #home [class*="backdrop-blur"] > .flex > a {
+    flex: 1 1 0% !important;
+    justify-content: center;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    padding-top: 0.625rem;
+    padding-bottom: 0.625rem;
+    font-size: 0.8125rem;
+    white-space: nowrap;
+    min-width: 0;
+  }
+
+  /* ── 1. Hero content wrapper — reduce vertical padding ── */
+  #home .relative.z-10 {
+    padding-top: 2.5rem !important;
+    padding-bottom: 2.5rem !important;
+  }
+
+  /* ── 2A. About inner glass card — vertical padding ≈ half of horizontal ── */
+  #about [class*="backdrop-blur"] {
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+  }
+
+  /* ── 2A. About content wrapper — reduce vertical padding ── */
+  #about .relative.z-10 {
+    padding-top: 2.5rem !important;
+    padding-bottom: 2.5rem !important;
+  }
+
+  /* ── 2A. About description — reduce excess bottom margin ── */
+  #about [class*="backdrop-blur"] > p {
+    margin-bottom: 1.25rem;
+  }
+
+  /* ── 2B. About traits grid — tighter gaps ── */
+  #about .grid.grid-cols-2 {
+    gap: 0.375rem !important;
+  }
+
+  /* ── 2B. About trait cards — tighter internal padding ── */
+  #about .grid.grid-cols-2 > div {
+    padding: 0.5rem 0.625rem !important;
+    gap: 0.5rem !important;
+  }
+
+  /* ── 3. All section wrapper cards — reduce vertical padding ──
+     Default py-16 (64px) → 40px on mobile.
+     Uses section:has to also target Process (no ID). */
+  #projects > div,
+  #skills > div,
+  #experience > div,
+  #contact > div,
+  section:not([id]) > div.rounded-3xl {
+    padding-top: 2.5rem !important;
+    padding-bottom: 2.5rem !important;
+  }
+
+  /* ── 3. Section headings — reduce bottom margin ──
+     Default mb-12 (48px) → 24px on mobile */
+  #projects h2,
+  #skills h2,
+  #experience h2,
+  #contact h2,
+  section:not([id]) h2 {
+    margin-bottom: 1.5rem !important;
+  }
+
+  /* ── 3. Projects header row — tighter bottom margin ── */
+  #projects .flex.items-center.justify-between {
+    margin-bottom: 1.5rem !important;
+  }
+
+  /* ── 3. Project cards — reduce image height ── */
+  #projects .h-48 {
+    height: 10rem !important;
+  }
+
+  /* ── 3. Project card info — reduce padding ── */
+  #projects .p-5 {
+    padding: 0.875rem !important;
+  }
+
+  /* ── 3. Experience cards — reduce internal padding ── */
+  #experience .p-6 {
+    padding: 1rem !important;
+  }
+
+  /* ── 3. Experience grid — tighter gap ── */
+  #experience .grid {
+    gap: 1rem !important;
+  }
+
+  /* ── 3. Contact grid — tighter gap ── */
+  #contact .grid {
+    gap: 1.5rem !important;
+  }
+
+  /* ── 4. Process grid — reduce gap ── */
+  section:not([id]) .grid.grid-cols-2 {
+    gap: 1rem !important;
+  }
+
+  /* ── 4. Process step icon circles — smaller on mobile ── */
+  section:not([id]) .grid.grid-cols-2 .w-16.h-16 {
+    width: 2.75rem !important;
+    height: 2.75rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  /* ── 4. Process step icon — smaller ── */
+  section:not([id]) .grid.grid-cols-2 .w-16.h-16 svg {
+    font-size: 0.875rem;
+  }
+
+  /* ── 4. Process step text spacing ── */
+  section:not([id]) .grid.grid-cols-2 .mb-4 {
+    margin-bottom: 0.375rem !important;
+  }
+
+  /* ── 5. Section outer spacing — reduce vertical gaps between sections ── */
+  /* Hero has pt-24 for fixed navbar clearance — preserve it. Only reduce bottom. */
+  #home {
+    padding-top: 5rem !important;  /* Keep navbar clearance (80px vs original 96px) */
+    padding-bottom: 0.5rem !important;
+  }
+
+  /* Other sections: reduce py-6 (24px) → 12px each side */
+  #about,
+  #projects,
+  #skills,
+  #experience,
+  #contact,
+  section.px-4:not([id]) {
+    padding-top: 0.75rem !important;
+    padding-bottom: 0.75rem !important;
+  }
+
+  /* ── Footer — reduce padding ── */
+  footer {
+    padding-top: 0.75rem !important;
+    padding-bottom: 1rem !important;
+  }
+}
+
+/* ── Extra-small screens (≤340px) — tighter hero buttons ── */
+@media (max-width: 340px) {
+  #home [class*="backdrop-blur"] > .flex > a {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    font-size: 0.75rem;
+    gap: 0.25rem;
+  }
+}
