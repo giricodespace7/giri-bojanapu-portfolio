@@ -1,4 +1,7 @@
-import { FaArrowRight, FaArrowDown } from 'react-icons/fa';
+import { FaArrowRight, FaArrowDown, FaDownload } from "react-icons/fa";
+import { ChevronRight } from "lucide-react";
+import { cn } from "../../lib/utils";
+import { AnimatedGradientText } from "../ui/animated-gradient-text";
 
 function Hero() {
   return (
@@ -21,7 +24,7 @@ function Hero() {
         <img
           src="https://giribojanapu.sirv.com/Portfolio%20images/Giri-Portfolio-Images/hero%20page.png"
           alt="Giri Babu - Full Stack Developer"
-          className="absolute inset-0 w-full h-full object-cover object-center z-0"
+          className="absolute inset-0 w-full h-full object-contain object-right z-0"
         />
 
         {/* Content on the left */}
@@ -37,18 +40,38 @@ function Hero() {
                 shadow-[0_4px_30px_rgba(0,0,0,0.06)]
               "
             >
-              <p className="font-mono text-sm text-primary mb-3 tracking-wide">
-                // hello world
-              </p>
-
+              {/* Animated Gradient Text Badge */}
+              <div className="group relative inline-flex items-center justify-center rounded-full px-4 py-1.5 shadow-[inset_0_-8px_10px_#8fdfff1f] transition-shadow duration-500 ease-out hover:shadow-[inset_0_-5px_10px_#8fdfff3f] mb-4 cursor-default">
+                <span
+                  className={cn(
+                    "animate-gradient absolute inset-0 block h-full w-full rounded-[inherit] bg-gradient-to-r from-[#ffaa40]/50 via-[#9c40ff]/50 to-[#ffaa40]/50 bg-[length:300%_100%] p-[1px]",
+                  )}
+                  style={{
+                    WebkitMask:
+                      "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
+                    WebkitMaskComposite: "destination-out",
+                    mask: "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
+                    maskComposite: "subtract",
+                    WebkitClipPath: "padding-box",
+                  }}
+                />
+                🎉{" "}
+                <hr className="mx-2 h-4 w-px shrink-0 border-0 bg-neutral-500" />
+                <AnimatedGradientText className="text-sm font-medium">
+                  Welcome to my portfolio
+                </AnimatedGradientText>
+                <ChevronRight className="ml-1 size-4 stroke-neutral-500 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" />
+              </div>
               <p className="text-lg text-ink-secondary mb-1 font-medium">
                 Hi, I'm
               </p>
-
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.08] tracking-tight mb-3">
+              <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-slate-900 leading-tight">
+                Giri <span class="text-purple-600 italic font-serif">Babu</span>
+              </h1>
+              {/* <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.08] tracking-tight mb-3">
                 <span className="font-display text-ink">Giri </span>
                 <span className="font-serif italic text-ink">Babu</span>
-              </h1>
+              </h1> */}
 
               <div className="inline-flex items-center gap-2 bg-primary/10 text-primary rounded-full px-4 py-1.5 mb-5">
                 <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
@@ -95,7 +118,8 @@ function Hero() {
                   "
                 >
                   Download CV
-                  <FaArrowDown className="text-xs" />
+                  <FaDownload className="text-xs" />
+                  {/* <FaArrowDown className="text-xs" /> */}
                 </a>
               </div>
             </div>

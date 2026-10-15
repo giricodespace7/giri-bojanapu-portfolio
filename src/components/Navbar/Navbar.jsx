@@ -95,7 +95,7 @@ export default function Navbar() {
           DESKTOP NAVBAR — tubelight style
       ════════════════════════════════ */}
       <header className="fixed left-0 top-0 z-[100] w-full pointer-events-none">
-        <div className="mx-auto max-w-[900px] px-4 pt-5">
+        <div className="mx-auto max-w-5xl px-4 pt-5">
           <nav
             ref={navRef}
             className="
@@ -103,11 +103,11 @@ export default function Navbar() {
               hidden md:flex
               h-[56px]
               items-center
-              justify-center
+              justify-between
               rounded-full
               border border-gray-200
               bg-white/80
-              px-2
+              px-5
               backdrop-blur-xl
               shadow-[0_4px_24px_rgba(0,0,0,0.06)]
               relative
@@ -125,6 +125,15 @@ export default function Navbar() {
                 width: indicatorStyle.width ?? 0,
               }}
             />
+
+            {/* ── GB. LOGO ── */}
+            <button
+              type="button"
+              onClick={handleLogoClick}
+              className="font-extrabold text-lg text-purple-600 tracking-wider shrink-0"
+            >
+              GB.
+            </button>
 
             {/* ── NAVIGATION ITEMS ── */}
             <div className="flex items-center gap-1">
@@ -155,6 +164,14 @@ export default function Navbar() {
                 );
               })}
             </div>
+
+            {/* ── LET'S CONNECT BUTTON ── */}
+            <a
+              href="#contact"
+              className="bg-purple-600 text-white text-xs font-semibold px-4 py-2 rounded-full hover:bg-purple-700 transition shadow-md shadow-purple-500/20 shrink-0"
+            >
+              Let's Connect
+            </a>
           </nav>
         </div>
       </header>
@@ -180,9 +197,9 @@ export default function Navbar() {
             <button
               type="button"
               onClick={handleLogoClick}
-              className="text-[15px] font-semibold tracking-[-0.2px] text-gray-900"
+              className="font-extrabold text-lg text-purple-600 tracking-wider"
             >
-              GB<span className="text-purple-500">.</span>
+              GB.
             </button>
 
             {/* MENU BUTTON */}

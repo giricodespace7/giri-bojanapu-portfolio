@@ -37,6 +37,7 @@ export default {
         'slide-up': 'slideUp 0.6s ease-out forwards',
         'float': 'float 6s ease-in-out infinite',
         'float-card': 'floatCard 8s ease-in-out infinite',
+        'gradient': 'gradient 4s linear infinite',
       },
       keyframes: {
         fadeIn: {
@@ -54,6 +55,10 @@ export default {
         floatCard: {
           '0%, 100%': { transform: 'translateY(0)' },
           '50%': { transform: 'translateY(-6px)' },
+        },
+        gradient: {
+          '0%': { backgroundPosition: '0% center' },
+          '100%': { backgroundPosition: '300% center' },
         },
       },
     },
