@@ -1,0 +1,44 @@
+
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 256 256"
+     width="256"
+     height="256">
+
+  <defs>
+    <linearGradient id="purple"
+      x1="20" y1="20"
+      x2="236" y2="236"
+      gradientUnits="userSpaceOnUse">
+
+      <stop offset="0%" stop-color="#E879F9"/>
+      <stop offset="25%" stop-color="#C026D3"/>
+      <stop offset="50%" stop-color="#9333EA"/>
+      <stop offset="75%" stop-color="#7C3AED"/>
+      <stop offset="100%" stop-color="#4F46E5"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Enlarged purple G -->
+  <path
+    d="M128 5
+       C60 5 5 60 5 128
+       C5 196 60 251 128 251
+       C167 251 203 232 225 202
+       L225 105
+       L123 105
+       L123 151
+       L177 151
+       C168 183 149 203 128 203
+       C86 203 53 170 53 128
+       C53 86 86 53 128 53
+       C155 53 179 67 193 90
+       L237 52
+       C212 22 173 5 128 5 Z"
+    fill="url(#purple)"/>
+
+  <!-- White opening -->
+  <path
+    d="M123 105H225V151H123Z"
+    fill="#FFFFFF"/>
+
+</svg>
