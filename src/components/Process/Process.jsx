@@ -41,38 +41,53 @@ const steps = [
 
 function Process() {
   return (
-    <section className="section">
-      <h2 className="font-display text-3xl md:text-4xl font-bold text-ink mb-12">
-        My Process
-      </h2>
+    <section className="px-4 sm:px-6 md:px-10 lg:px-16 py-6">
+      {/* ── Process Card ── */}
+      <div
+        className="
+          rounded-3xl
+          bg-white
+          shadow-[0_8px_50px_rgba(124,58,237,0.18),0_2px_20px_rgba(124,58,237,0.10)]
+          border border-primary/20
+          animate-float-card
+          hover:shadow-[0_12px_60px_rgba(124,58,237,0.25),0_4px_24px_rgba(124,58,237,0.15)]
+          transition-shadow duration-500
+          px-6 sm:px-10 md:px-14 lg:px-16
+          py-16 md:py-20
+        "
+      >
+        <h2 className="font-display text-3xl md:text-4xl font-bold text-ink mb-12">
+          My Process
+        </h2>
 
-      <div className="relative">
-        {/* Connecting dashed line */}
-        <div className="hidden lg:block absolute top-8 left-[10%] right-[10%] border-t-2 border-dashed border-gray-200" />
+        <div className="relative">
+          {/* Connecting dashed line */}
+          <div className="hidden lg:block absolute top-8 left-[10%] right-[10%] border-t-2 border-dashed border-gray-200" />
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8">
-          {steps.map(({ num, title, desc, icon: Icon }) => (
-            <div key={num} className="relative flex flex-col items-center text-center group">
-              {/* Icon circle */}
-              <div
-                className="
-                  relative z-10
-                  w-16 h-16 rounded-full
-                  bg-primary-light border-2 border-primary/20
-                  flex items-center justify-center
-                  mb-4
-                  group-hover:bg-primary group-hover:border-primary
-                  transition-all duration-300
-                "
-              >
-                <Icon className="text-primary text-lg group-hover:text-white transition-colors" />
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8">
+            {steps.map(({ num, title, desc, icon: Icon }) => (
+              <div key={num} className="relative flex flex-col items-center text-center group">
+                {/* Icon circle */}
+                <div
+                  className="
+                    relative z-10
+                    w-16 h-16 rounded-full
+                    bg-primary-light border-2 border-primary/20
+                    flex items-center justify-center
+                    mb-4
+                    group-hover:bg-primary group-hover:border-primary
+                    transition-all duration-300
+                  "
+                >
+                  <Icon className="text-primary text-lg group-hover:text-white transition-colors" />
+                </div>
+
+                <span className="text-xs font-bold text-primary mb-1">{num}</span>
+                <h3 className="text-sm font-bold text-ink mb-1">{title}</h3>
+                <p className="text-xs text-ink-muted leading-relaxed">{desc}</p>
               </div>
-
-              <span className="text-xs font-bold text-primary mb-1">{num}</span>
-              <h3 className="text-sm font-bold text-ink mb-1">{title}</h3>
-              <p className="text-xs text-ink-muted leading-relaxed">{desc}</p>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>

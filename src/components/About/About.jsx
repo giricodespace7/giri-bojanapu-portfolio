@@ -26,8 +26,11 @@ function About() {
           rounded-3xl
           min-h-[85vh]
           flex items-center
-          shadow-[0_8px_40px_rgba(0,0,0,0.08)]
-          border border-gray-100
+          shadow-[0_8px_50px_rgba(124,58,237,0.18),0_2px_20px_rgba(124,58,237,0.10)]
+          border border-primary/20
+          animate-float-card
+          hover:shadow-[0_12px_60px_rgba(124,58,237,0.25),0_4px_24px_rgba(124,58,237,0.15)]
+          transition-shadow duration-500
         "
       >
         {/* Card background image — clearly visible */}
