@@ -86,33 +86,39 @@ textarea:focus-visible {
    ═══════════════════════════════════════════════════════ */
 @media (max-width: 767px) {
 
+  /* ── 0. White frosted-glass card for Hero & About text containers ── */
+  .glass-mobile {
+    background: rgba(255, 255, 255, 0.82);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 1.125rem;
+    box-shadow:
+      0 4px 20px rgba(0, 0, 0, 0.06),
+      0 1px 4px rgba(0, 0, 0, 0.04);
+    padding: 1.25rem 1.25rem !important;
+    margin: 0 0.25rem;
+  }
+
   /* ── 1A. Hero & About outer card — remove excessive min-height ── */
   #home > div,
   #about > div {
     min-height: auto !important;
   }
 
-  /* ── 1A. Hero inner glass card — vertical padding ≈ half of horizontal ── */
-  /* Horizontal is ~28px (px-7). Set vertical to ~16px. */
-  #home [class*="backdrop-blur"] {
-    padding-top: 1rem !important;
-    padding-bottom: 1rem !important;
-  }
-
   /* ── 1A. Hero description — reduce excess bottom margin ── */
-  /* Target only the description paragraph (last p), not the greeting */
-  #home [class*="backdrop-blur"] > p:last-of-type {
+  #home .max-w-lg > p:last-of-type {
     margin-bottom: 1.25rem;
   }
 
   /* ── 1B. Hero buttons — force side-by-side ── */
-  #home [class*="backdrop-blur"] > .flex {
+  #home .max-w-lg > .flex {
     flex-wrap: nowrap !important;
     flex-direction: row !important;
     gap: 0.5rem !important;
   }
 
-  #home [class*="backdrop-blur"] > .flex > a {
+  #home .max-w-lg > .flex > a {
     flex: 1 1 0% !important;
     justify-content: center;
     padding-left: 0.75rem;
@@ -130,12 +136,6 @@ textarea:focus-visible {
     padding-bottom: 2.5rem !important;
   }
 
-  /* ── 2A. About inner glass card — vertical padding ≈ half of horizontal ── */
-  #about [class*="backdrop-blur"] {
-    padding-top: 1rem !important;
-    padding-bottom: 1rem !important;
-  }
-
   /* ── 2A. About content wrapper — reduce vertical padding ── */
   #about .relative.z-10 {
     padding-top: 2.5rem !important;
@@ -143,7 +143,7 @@ textarea:focus-visible {
   }
 
   /* ── 2A. About description — reduce excess bottom margin ── */
-  #about [class*="backdrop-blur"] > p {
+  #about .max-w-lg > p {
     margin-bottom: 1.25rem;
   }
 
@@ -259,10 +259,11 @@ textarea:focus-visible {
 
 /* ── Extra-small screens (≤340px) — tighter hero buttons ── */
 @media (max-width: 340px) {
-  #home [class*="backdrop-blur"] > .flex > a {
+  #home .max-w-lg > .flex > a {
     padding-left: 0.5rem;
     padding-right: 0.5rem;
     font-size: 0.75rem;
     gap: 0.25rem;
   }
 }
+
